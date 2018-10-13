@@ -8,26 +8,10 @@ import './App.css';
 class App extends Component {
 
   state = {
-    contacts : [
-      {
-        id: 1,
-        name: 'Piotr',
-        surname: 'Poczwardowski',
-        number: '534429916'
-      },
-      {
-        id: 2,
-        name: 'Daria',
-        surname: 'Werner',
-        number: '551485921'
-      },
-      {
-        id: 3,
-        name: 'Paweł',
-        surname: 'Poczwardowski',
-        number: '551779251'
-      }
-    ]
+    contacts: JSON.parse(localStorage.getItem('contacts') || '[]'),
+  }
+  componentDidUpdate() {
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts))
   }
   removeContact = contactId => {
     this.setState({

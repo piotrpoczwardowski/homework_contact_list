@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import './AddContactForm.css'
 class AddContactForm extends Component{
 
     state = {
@@ -59,16 +59,17 @@ class AddContactForm extends Component{
 
 render(){
     return(
-
+        <div className="form">
         <form onSubmit={this.handleSubmit}>
         {
             this.state.error && <p>{this.state.error.message}</p>
         }
-            <input value ={this.state.contactName} onChange ={this.handleChangeName} />
-            <input value ={this.state.contactSurName} onChange ={this.handleChangeSurName} />
-            <input value ={this.state.contactNumber} onChange ={this.handleChangeNumber} />
+            <input placeholder='Name' value ={this.state.contactName} onChange ={this.handleChangeName} />
+            <input placeholder='Surame' value ={this.state.contactSurName} onChange ={this.handleChangeSurName} />
+            <input placeholder='Number' value ={this.state.contactNumber} onChange ={this.handleChangeNumber} />
             <button>Add</button>
         </form>
+        </div>
 
     )
 }
