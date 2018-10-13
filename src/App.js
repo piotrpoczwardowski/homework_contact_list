@@ -54,7 +54,7 @@ class App extends Component {
         <div className='contact_list'>
        
           <h1>Contact List</h1>
-          <AddContactForm addContactFunction={this.addContact}/>
+          <AddContactForm addSurName={this.addContact} addName={this.addContact}/>
           <div className='list'>
             <ul>
               {this.state.contacts.map(x => (
