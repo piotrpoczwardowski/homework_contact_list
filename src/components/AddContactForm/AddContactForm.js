@@ -5,6 +5,7 @@ class AddContactForm extends Component{
     state = {
         contactName: '',
         contactSurName: '',
+        contactNumber: '',
         error: null
     }
 
@@ -24,9 +25,9 @@ class AddContactForm extends Component{
             return;
  
          }
-        console.log(this.state.contactName)
-        this.props.addName(this.state.contactName)
-        this.props.addSurName(this.state.contactSurName)
+        console.log(this.state)
+        this.props.x(this.state)
+        
         this.setState({contactName: '', error: null})
         this.setState({contactSurName: '', error: null})
 
