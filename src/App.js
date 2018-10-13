@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AddContactForm from './components/AddContactForm/AddContactForm'
 
 import './App.css';
 
@@ -40,7 +41,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className='contact_list'>
+       
           <h1>Contact List</h1>
+          <AddContactForm/>
           <div className='list'>
             <ul>
               {this.state.contacts.map(x => (
