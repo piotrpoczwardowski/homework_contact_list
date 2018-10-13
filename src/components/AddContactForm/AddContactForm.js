@@ -25,11 +25,19 @@ class AddContactForm extends Component{
             return;
  
          }
-        console.log(this.state)
+         if (this.state.contactNumber === ''){
+            this.setState({
+                error : new Error ('Need Number')
+            })
+            return;
+ 
+         }
+        
         this.props.x(this.state)
         
         this.setState({contactName: '', error: null})
         this.setState({contactSurName: '', error: null})
+        this.setState({contactNumber: '', error: null})
 
     }
 
@@ -43,6 +51,11 @@ class AddContactForm extends Component{
             contactSurName: event.target.value
         })
     }
+    handleChangeNumber = event => {
+        this.setState({
+            contactNumber: event.target.value
+        })
+    }
 
 render(){
     return(
@@ -53,6 +66,7 @@ render(){
         }
             <input value ={this.state.contactName} onChange ={this.handleChangeName} />
             <input value ={this.state.contactSurName} onChange ={this.handleChangeSurName} />
+            <input value ={this.state.contactNumber} onChange ={this.handleChangeNumber} />
             <button>Add</button>
         </form>
 

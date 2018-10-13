@@ -44,7 +44,7 @@ class App extends Component {
        id:Date.now(),
        name: z.contactName,
        surname: z.contactSurName,
-       number: 0
+       number: z.contactNumber
      })
     })
   }
