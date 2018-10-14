@@ -1,11 +1,22 @@
 .form{
    
-    border: 1px solid black;
+  
    
 
 }
+.form p{
+    color: red;
+}
+
 
 .form input{
-    margin: 0 auto;
+    margin:  auto;
+    width: 60%;
+    height: 20px;
     display: block;
+}
+
+.inputs{
+    margin: 50px auto;
+
 }
